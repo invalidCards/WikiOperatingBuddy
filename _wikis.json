@@ -1,0 +1,259 @@
+[
+    {
+        "key": "ai",
+        "name": "Arms Institute",
+        "url": "https://armswiki.org/w",
+        "articleUrl": "https://armswiki.org/wiki",
+        "aliases": [
+            "arm",
+            "arms"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "bp",
+        "name": "Bulbapedia",
+        "url": "https://bulbapedia.bulbagarden.net/w",
+        "articleUrl": "https://bulbapedia.bulbagarden.net/wiki",
+        "aliases": [
+            "bulb",
+            "blb",
+            "poke",
+            "pkm",
+            "pkmn",
+            "pok",
+            "pika"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "dq",
+        "name": "Dragon Quest Wiki",
+        "url": "https://dragon-quest.org/w",
+        "articleUrl": "https://dragon-quest.org/wiki",
+        "aliases": [
+            "draque",
+            "drag",
+            "dqw"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "fe",
+        "name": "Fire Emblem Wiki",
+        "url": "https://fireemblemwiki.org/w",
+        "articleUrl": "https://fireemblemwiki.org/wiki",
+        "aliases": [
+            "fire",
+            "few",
+            "corn"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "fz",
+        "name": "F-Zero Wiki",
+        "url": "https://mutecity.org/w",
+        "articleUrl": "https://mutecity.org/wiki",
+        "aliases": [
+            "f0"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "gs",
+        "name": "Golden Sun Universe",
+        "url": "https://goldensunwiki.net/w",
+        "articleUrl": "https://goldensunwiki.net/wiki",
+        "aliases": [
+            "gsu",
+            "gold",
+            "sun"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "ic",
+        "name": "Icaruspedia",
+        "url": "https://www.kidicaruswiki.org/w",
+        "articleUrl": "https://www.kidicaruswiki.org/wiki",
+        "aliases": [
+            "pit",
+            "icp",
+            "ica"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "ip",
+        "name": "Inkipedia",
+        "url": "https://splatoonwiki.org/w",
+        "articleUrl": "https://splatoonwiki.org/wiki",
+        "aliases": [
+            "ink",
+            "inkp",
+            "splat",
+            "squid"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "lw",
+        "name": "Lylat Wiki",
+        "url": "https://starfoxwiki.info/w",
+        "articleUrl": "https://starfoxwiki.info/wiki",
+        "aliases": [
+            "fox",
+            "sf"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "mw",
+        "name": "Metroid Wiki",
+        "url": "https://www.metroidwiki.org/w",
+        "articleUrl": "https://www.metroidwiki.org/wiki",
+        "aliases": [
+            "mr",
+            "samus",
+            "mtrd"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "nw",
+        "name": "N Wiki",
+        "url": "http://www.niwanetwork.org/wiki",
+        "articleUrl": "http://www.niwanetwork.org/wiki",
+        "aliases": [
+            "n",
+            "ntdo"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "np",
+        "name": "Nookipedia",
+        "url": "https://nookipedia.com/w",
+        "articleUrl": "https://nookipedia.com/wiki",
+        "aliases": [
+            "ac",
+            "cross",
+            "nook"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "pp",
+        "name": "Pikipedia",
+        "url": "https://www.pikminwiki.com",
+        "articleUrl": "https://www.pikminwiki.com",
+        "aliases": [
+            "piki",
+            "pik"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "sw",
+        "name": "Smash Wiki",
+        "url": "https://www.ssbwiki.com",
+        "articleUrl": "https://www.ssbwiki.com",
+        "aliases": [
+            "smash",
+            "bros",
+            "ssb",
+            "ssbu"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "sf",
+        "name": "The Legendary Starfy Wiki",
+        "url": "https://starfywiki.org",
+        "articleUrl": "https://starfywiki.org/wiki",
+        "aliases": [
+            "tlsw",
+            "starfy"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "st",
+        "name": "Strategy Wiki",
+        "url": "https://strategywiki.org/w",
+        "articleUrl": "https://strategywiki.org/wiki",
+        "aliases": [
+            "strat",
+            "str"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "sm",
+        "name": "Super Mario Wiki",
+        "url": "https://www.mariowiki.com",
+        "articleUrl": "https://www.mariowiki.com",
+        "aliases": [
+            "m",
+            "mw",
+            "smw",
+            "mario",
+            "mk",
+            "mp",
+            "mari"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "ww",
+        "name": "Wars Wiki",
+        "url": "https://warswiki.org/w",
+        "articleUrl": "https://warswiki.org/wiki",
+        "aliases": [
+            "aw",
+            "adv",
+            "dsw"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "wb",
+        "name": "WikiBound",
+        "url": "https://wikibound.info/w",
+        "articleUrl": "https://wikibound.info/wiki",
+        "aliases": [
+            "eb",
+            "mother",
+            "mom",
+            "ness",
+            "ebw"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "wk",
+        "name": "Wikirby",
+        "url": "https://wikirby.com/w",
+        "articleUrl": "https://wikirby.com/wiki",
+        "aliases": [
+            "kirby",
+            "k"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "zw",
+        "name": "Zelda Wiki",
+        "url": "https://zelda.gamepedia.com",
+        "articleUrl": "https://zelda.gamepedia.com",
+        "aliases": [
+            "link",
+            "lnk",
+            "zelda",
+            "tri",
+            "trif"
+        ],
+        "setOnly": []
+    }
+]
