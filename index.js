@@ -57,7 +57,7 @@ bot.on('message', async msg => {
                     return;
                 }
 
-                if (msg.channel.type !== dm) {
+                if (msg.channel.type !== 'dm') {
                     let serverRow = db.prepare('SELECT * FROM guilds WHERE GuildID=?').get(msg.guild.id);
                     if (!serverRow) {
                         msg.channel.send(`Please set the default wiki for the guild first with *${config.prefix}serverWiki*.`);
@@ -253,7 +253,7 @@ const fetchLink = async (wikiName, article) => {
 const fetchRawLink = (wikiName, article) => {
     let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
     if (!wiki.length) return false;
-    return `${wiki[0].articleUrl}/${article}`;
+    return `${wiki[0].articleUrl}/${encodeURI(article)}`;
 }
 
 bot.login(config.token);
