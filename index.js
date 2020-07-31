@@ -93,7 +93,7 @@ bot.on('message', async msg => {
                 break;
             }
             case 'reloadWikis': {
-                if (msg.user.id !== config.adminId) {
+                if (msg.author.id !== config.adminId) {
                     return;
                 }
                 delete require.cache[require.resolve('./_wikis.json')];
@@ -102,16 +102,25 @@ bot.on('message', async msg => {
                 break;
             }
             case 'list': {
-                let embed = new Discord.MessageEmbed().setColor('#B22222').setTitle('Available wikis').setDescription(`The following is a list of available wikis and their aliases. Both the full wiki name and all aliases can be used to set a wiki using \`${config.prefix}serverWiki\` and \`${config.prefix}clientWiki\`, as well as to make a one-time lookup to another wiki other than the default of the server or channel.`).setTimestamp();
-                for (wikiData of wikis) {
-                    let aliases = wikiData.aliases;
-                    aliases.unshift(wikiData.key);
-                    embed.addField(wikiData.name, aliases.join(', '), true);
-                }
-                embed.addField('Unsupported wikis', `The following wikis are not supported by WOB:
+                for (let embedCount = 0; embedCount < Math.ceil(wikis.length / 24); embedCount++) {
+                    let embed = new Discord.MessageEmbed().setColor('#B22222').setTitle('Available wikis').setTimestamp();
+                    if (embedCount === 0) {
+                        embed.setDescription(`The following is a list of available wikis and their aliases. Both the full wiki name and all aliases can be used to set a wiki using \`${config.prefix}serverWiki\` and \`${config.prefix}clientWiki\`, as well as to make a one-time lookup to another wiki other than the default of the server or channel.`)
+                    }
+                    for (let i = 0; i < 24; i++) {
+                        let wikiData = wikis[24*embedCount + i];
+                        if (!wikiData) continue;
+                        let aliases = Array.from(wikiData.aliases);
+                        aliases.unshift(wikiData.key);
+                        embed.addField(wikiData.name, aliases.join(', '), true);
+                    }
+                    if (embedCount === Math.ceil(wikis.length / 24) - 1) {
+                        embed.addField('Unsupported wikis', `The following wikis are not supported by WOB:
 • Hard Drop runs a very old version of MediaWiki, and its API is not compatible with the inner workings of this bot.
 • Pikmin Fanon is shutting down on September 1st, 2020, and will not be supported by this bot in the meantime.`);
-                msg.channel.send(embed);
+                    }
+                    msg.channel.send(embed);
+                }
                 break;
             }
             case 'help': {
@@ -180,14 +189,18 @@ bot.on('message', async msg => {
             for (let linkData of links) {
                 if (linkData.query.includes(':')) {
                     let [altWiki, ...actualQuery] = linkData.query.split(':');
+                    if (!actualQuery[0]) {
+                        actualQuery = ['Main Page'];
+                    }
+                    altWiki = altWiki.toLowerCase();
                     if (realWikiName(altWiki)) {
                         let wikiLink = '';
                         switch (linkData.type) {
                             case TYPE_NORMAL:
-                                wikiLink = await fetchLink(altWiki, actualQuery.join(':').toLowerCase());
+                                wikiLink = await fetchLink(altWiki, actualQuery.join(':'));
                                 break;
                             case TYPE_TEMPLATE:
-                                wikiLink = await fetchLink(altWiki, `Template:${actualQuery.join(':').toLowerCase()}`);
+                                wikiLink = await fetchLink(altWiki, `Template:${actualQuery.join(':')}`);
                                 break;
                             case TYPE_RAW:
                                 wikiLink = fetchRawLink(altWiki, actualQuery.join(':'));
@@ -199,13 +212,16 @@ bot.on('message', async msg => {
                         continue;
                     }
                 }
+                if (!linkData.query) {
+                    linkData.query = 'Main Page';
+                }
                 let wikiLink = '';
                 switch (linkData.type) {
                     case TYPE_NORMAL:
-                        wikiLink = await fetchLink(wiki, linkData.query.toLowerCase());
+                        wikiLink = await fetchLink(wiki, linkData.query);
                         break;
                     case TYPE_TEMPLATE:
-                        wikiLink = await fetchLink(wiki, `Template:${linkData.query.toLowerCase()}`);
+                        wikiLink = await fetchLink(wiki, `Template:${linkData.query}`);
                         break;
                     case TYPE_RAW:
                         wikiLink = fetchRawLink(wiki, linkData.query);

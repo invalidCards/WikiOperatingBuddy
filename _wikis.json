@@ -11,6 +11,16 @@
         "setOnly": []
     },
     {
+        "key": "aw",
+        "name": "Arthur Wiki",
+        "url": "https://arthurwiki.com/w",
+        "articleUrl": "https://arthurwiki.com/wiki",
+        "aliases": [
+            "arthur"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "bp",
         "name": "Bulbapedia",
         "url": "https://bulbapedia.bulbagarden.net/w",
@@ -27,6 +37,49 @@
         "setOnly": []
     },
     {
+        "key": "cb",
+        "name": "Crash Bandicoot Wiki",
+        "url": "https://crashbandicootwiki.com/w",
+        "articleUrl": "https://crashbandicootwiki.com/wiki",
+        "aliases": [
+            "crash"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "ch",
+        "name": "Chrono Wiki",
+        "url": "https://www.chronowiki.org/w",
+        "articleUrl": "https://www.chronowiki.org/wiki",
+        "aliases": [
+            "chrono"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "cw",
+        "name": "Conker Wiki",
+        "url": "https://conker.rarewiki.com/w",
+        "articleUrl": "https://conker.rarewiki.com/wiki",
+        "aliases": [
+            "conker",
+            "cts"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "dw",
+        "name": "Diary of a Wimpy Kid Wiki",
+        "url": "https://wimpykidwiki.com/w",
+        "articleUrl": "https://wimpykidwiki.com/wiki",
+        "aliases": [
+            "doawk",
+            "dwk",
+            "wimpykid"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "dq",
         "name": "Dragon Quest Wiki",
         "url": "https://dragon-quest.org/w",
@@ -39,6 +92,17 @@
         "setOnly": []
     },
     {
+        "key": "eo",
+        "name": "Etrian Odyssey Wiki",
+        "url": "https://etrianodysseywiki.org/w",
+        "articleUrl": "https://etrianodysseywiki.org/wiki",
+        "aliases": [
+            "etrian",
+            "etr"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "fe",
         "name": "Fire Emblem Wiki",
         "url": "https://fireemblemwiki.org/w",
@@ -47,6 +111,16 @@
             "fire",
             "few",
             "corn"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "ff",
+        "name": "Final Fantasy Wiki",
+        "url": "https://finalfantasywiki.com/w",
+        "articleUrl": "https://finalfantasywiki.com/wiki",
+        "aliases": [
+            "fantasy"
         ],
         "setOnly": []
     },
@@ -69,6 +143,19 @@
             "gsu",
             "gold",
             "sun"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "hb",
+        "name": "Hanna-Barbera Wiki",
+        "url": "https://hanna-barberawiki.com/w",
+        "articleUrl": "https://hanna-barberawiki.com/wiki",
+        "aliases": [
+            "hanna",
+            "tnj",
+            "scooby",
+            "flintstones"
         ],
         "setOnly": []
     },
@@ -98,6 +185,29 @@
         "setOnly": []
     },
     {
+        "key": "jw",
+        "name": "Jiggywikki",
+        "url": "https://banjokazooiewiki.com/w",
+        "articleUrl": "https://banjokazooiewiki.com/wiki",
+        "aliases": [
+            "bk",
+            "banjo",
+            "kazooie"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "kh",
+        "name": "Kingdom Hearts Wiki",
+        "url": "https://www.khwiki.com",
+        "articleUrl": "https://www.khwiki.com",
+        "aliases": [
+            "khw",
+            "khwiki"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "lw",
         "name": "Lylat Wiki",
         "url": "https://starfoxwiki.info/w",
@@ -105,6 +215,16 @@
         "aliases": [
             "fox",
             "sf"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "mv",
+        "name": "Marioverse Wiki",
+        "url": "https://marioversewiki.com/w",
+        "articleUrl": "https://marioversewiki.com/wiki",
+        "aliases": [
+            "mverse"
         ],
         "setOnly": []
     },
@@ -121,6 +241,18 @@
         "setOnly": []
     },
     {
+        "key": "np",
+        "name": "Nookipedia",
+        "url": "https://nookipedia.com/w",
+        "articleUrl": "https://nookipedia.com/wiki",
+        "aliases": [
+            "ac",
+            "cross",
+            "nook"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "nw",
         "name": "N Wiki",
         "url": "http://www.niwanetwork.org/wiki",
@@ -132,14 +264,12 @@
         "setOnly": []
     },
     {
-        "key": "np",
-        "name": "Nookipedia",
-        "url": "https://nookipedia.com/w",
-        "articleUrl": "https://nookipedia.com/wiki",
+        "key": "pm",
+        "name": "Power Master Wiki",
+        "url": "https://powermasterwiki.com/w",
+        "articleUrl": "https://powermasterwiki.com/wiki",
         "aliases": [
-            "ac",
-            "cross",
-            "nook"
+            "power"
         ],
         "setOnly": []
     },
@@ -155,15 +285,23 @@
         "setOnly": []
     },
     {
-        "key": "sw",
-        "name": "Smash Wiki",
-        "url": "https://www.ssbwiki.com",
-        "articleUrl": "https://www.ssbwiki.com",
+        "key": "rw",
+        "name": "Rare Wiki",
+        "url": "https://rarewiki.com/w",
+        "articleUrl": "https://rarewiki.com/wiki",
         "aliases": [
-            "smash",
-            "bros",
-            "ssb",
-            "ssbu"
+            "rare"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "se",
+        "name": "Square Enix Wiki",
+        "url": "https://seiwanetwork.org/wiki",
+        "articleUrl": "https://seiwanetwork.org/wiki",
+        "aliases": [
+            "sew",
+            "seiwa"
         ],
         "setOnly": []
     },
@@ -175,17 +313,6 @@
         "aliases": [
             "tlsw",
             "starfy"
-        ],
-        "setOnly": []
-    },
-    {
-        "key": "st",
-        "name": "Strategy Wiki",
-        "url": "https://strategywiki.org/w",
-        "articleUrl": "https://strategywiki.org/wiki",
-        "aliases": [
-            "strat",
-            "str"
         ],
         "setOnly": []
     },
@@ -206,14 +333,36 @@
         "setOnly": []
     },
     {
-        "key": "ww",
-        "name": "Wars Wiki",
-        "url": "https://warswiki.org/w",
-        "articleUrl": "https://warswiki.org/wiki",
+        "key": "sp",
+        "name": "Spyro Wiki",
+        "url": "https://spyrowiki.com/w",
+        "articleUrl": "https://spyrowiki.com/wiki",
         "aliases": [
-            "aw",
-            "adv",
-            "dsw"
+            "spyro"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "st",
+        "name": "Strategy Wiki",
+        "url": "https://strategywiki.org/w",
+        "articleUrl": "https://strategywiki.org/wiki",
+        "aliases": [
+            "strat",
+            "str"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "sw",
+        "name": "Smash Wiki",
+        "url": "https://www.ssbwiki.com",
+        "articleUrl": "https://www.ssbwiki.com",
+        "aliases": [
+            "smash",
+            "bros",
+            "ssb",
+            "ssbu"
         ],
         "setOnly": []
     },
@@ -232,6 +381,23 @@
         "setOnly": []
     },
     {
+        "key": "wb-it",
+        "name": "WikiBound Italia",
+        "url": "https://it.wikibound.info/w",
+        "articleUrl": "https://it.wikibound.info/wiki",
+        "aliases": [
+            "mother-it",
+            "wbit",
+            "ness-it",
+            "eb-it",
+            "ebit",
+            "ebw-it",
+            "ebwit",
+            "it-wb"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "wk",
         "name": "Wikirby",
         "url": "https://wikirby.com/w",
@@ -239,6 +405,18 @@
         "aliases": [
             "kirby",
             "k"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "ww",
+        "name": "Wars Wiki",
+        "url": "https://warswiki.org/w",
+        "articleUrl": "https://warswiki.org/wiki",
+        "aliases": [
+            "aw",
+            "adv",
+            "dsw"
         ],
         "setOnly": []
     },
