@@ -3,9 +3,9 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 const needle = require('needle');
 
-const regexLink = /\[\[(.*?)\]\]/g;
-const regexTemp = /\{\{(.*?)\}\}/g;
-const regexRaw  = /--(.*?)--/g;
+const regexLink = /\[\[(.*?)(\|.*?)?\]\]/g;
+const regexTemp = /\{\{(.*?)(\|.*?)?\}\}/g;
+const regexRaw  = /--(.*?)(\|.*?)?--/g;
 
 const TYPE_NORMAL = 'normal';
 const TYPE_TEMPLATE = 'template';
