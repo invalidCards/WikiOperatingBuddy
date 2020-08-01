@@ -239,11 +239,12 @@ bot.on('message', async msg => {
 });
 
 const realWikiName = (abbreviation) => {
-    let wiki = wikis.filter(w => w.key === abbreviation);
+    abbreviation = abbreviation.toLowerCase();
+    let wiki = wikis.filter(w => w.key.toLowerCase() === abbreviation);
     if (wiki.length) return wiki[0].key;
-    wiki = wikis.filter(w => w.name === abbreviation);
+    wiki = wikis.filter(w => w.name.toLowerCase() === abbreviation);
     if (wiki.length) return wiki[0].key;
-    wiki = wikis.filter(w => w.aliases.includes(abbreviation));
+    wiki = wikis.filter(w => w.aliases.map(a => a.toLowerCase()).includes(abbreviation));
     if (wiki.length) return wiki[0].key;
     return false;
 };
@@ -261,7 +262,8 @@ const getWikiBaseUrl = (wikiName) => {
 };
 
 const fetchLink = async (wikiName, article) => {
-    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${encodeURI(article)}&limit=1&redirects=resolve`);
+    article = article.replace(/ /g, '_');
+    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${encodeURI(article.toLowerCase())}&limit=1&redirects=resolve`);
     if (!response.body[1].length) return false;
     return response.body[3][0];
 };

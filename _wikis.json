@@ -1,7 +1,7 @@
 [
     {
         "key": "ai",
-        "name": "Arms Institute",
+        "name": "ARMS Institute",
         "url": "https://armswiki.org/w",
         "articleUrl": "https://armswiki.org/wiki",
         "aliases": [
@@ -363,7 +363,8 @@
             "smash",
             "bros",
             "ssb",
-            "ssbu"
+            "ssbu",
+            "smashwiki"
         ],
         "setOnly": []
     },
