@@ -5,7 +5,7 @@ const needle = require('needle');
 
 const regexLink = /\[\[(.*?)\]\]/g;
 const regexTemp = /\{\{(.*?)\}\}/g;
-const regexRaw  = /\-\-(.*?)\-\-/g;
+const regexRaw  = /--(.*?)--/g;
 
 const TYPE_NORMAL = 'normal';
 const TYPE_TEMPLATE = 'template';
@@ -26,7 +26,7 @@ bot.on('message', async msg => {
         return;
     }
     if (msg.cleanContent.startsWith(config.prefix)) {
-        [cmd, ...args] = msg.cleanContent.split(' ');
+        let [cmd, ...args] = msg.cleanContent.split(' ');
         switch (cmd.replace(config.prefix, '')) {
             case 'serverWiki': {
                 if (msg.channel.type !== 'dm' && !msg.member.hasPermission('ADMINISTRATOR') && msg.user.id !== config.adminId) {
@@ -71,7 +71,7 @@ bot.on('message', async msg => {
                     }
                     try {
                         db.prepare('DELETE FROM channels WHERE ChannelID=?').run(msg.channel.id);
-                        msg.channel.send(`The wiki for this channel has been reset to the default for the server.`);
+                        msg.channel.send('The wiki for this channel has been reset to the default for the server.');
                     } catch(e) {
                         msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
                         console.error(e);
@@ -105,7 +105,7 @@ bot.on('message', async msg => {
                 for (let embedCount = 0; embedCount < Math.ceil(wikis.length / 24); embedCount++) {
                     let embed = new Discord.MessageEmbed().setColor('#B22222').setTitle('Available wikis').setTimestamp();
                     if (embedCount === 0) {
-                        embed.setDescription(`The following is a list of available wikis and their aliases. Both the full wiki name and all aliases can be used to set a wiki using \`${config.prefix}serverWiki\` and \`${config.prefix}clientWiki\`, as well as to make a one-time lookup to another wiki other than the default of the server or channel.`)
+                        embed.setDescription(`The following is a list of available wikis and their aliases. Both the full wiki name and all aliases can be used to set a wiki using \`${config.prefix}serverWiki\` and \`${config.prefix}clientWiki\`, as well as to make a one-time lookup to another wiki other than the default of the server or channel.`);
                     }
                     for (let i = 0; i < 24; i++) {
                         let wikiData = wikis[24*embedCount + i];
@@ -146,8 +146,8 @@ bot.on('message', async msg => {
         }
     } else {
         let content = msg.cleanContent;
-        content = content.replace(/\`\`\`.*?\`\`\`/gm, '');
-        content = content.replace(/\`.*?\`/gm, '');
+        content = content.replace(/```.*?```/gm, '');
+        content = content.replace(/`.*?`/gm, '');
         content = content.replace(/https?[^ ]+?/gm, '');
         let links = [];
         if (content.search(regexLink) > -1) {
@@ -252,7 +252,7 @@ const getWikiObj = (wikiName) => {
     let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
     if (wiki.length) return wiki[0];
     return false;
-}
+};
 
 const getWikiBaseUrl = (wikiName) => {
     let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
@@ -270,6 +270,6 @@ const fetchRawLink = (wikiName, article) => {
     let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
     if (!wiki.length) return false;
     return `${wiki[0].articleUrl}/${encodeURI(article)}`;
-}
+};
 
 bot.login(config.token);
