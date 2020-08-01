@@ -259,7 +259,8 @@
         "articleUrl": "http://www.niwanetwork.org/wiki",
         "aliases": [
             "n",
-            "ntdo"
+            "ntdo",
+            "nwiki"
         ],
         "setOnly": []
     },
@@ -399,7 +400,7 @@
     },
     {
         "key": "wk",
-        "name": "Wikirby",
+        "name": "WiKirby",
         "url": "https://wikirby.com/w",
         "articleUrl": "https://wikirby.com/wiki",
         "aliases": [
