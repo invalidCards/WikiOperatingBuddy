@@ -263,7 +263,7 @@ const getWikiBaseUrl = (wikiName) => {
 
 const fetchLink = async (wikiName, article) => {
     article = article.replace(/ /g, '_');
-    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${encodeURI(article.toLowerCase())}&limit=1&redirects=resolve`);
+    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${encodeURI(article)}&limit=1&redirects=resolve`);
     if (!response.body[1].length) return false;
     return response.body[3][0];
 };
