@@ -299,7 +299,7 @@
         "key": "se",
         "name": "Square Enix Wiki",
         "url": "https://seiwanetwork.org/wiki",
-        "articleUrl": "https://seiwanetwork.org/wiki",
+        "articleUrl": "https://seiwanetwork.org/wiki/index.php?title=",
         "aliases": [
             "sew",
             "seiwa"
