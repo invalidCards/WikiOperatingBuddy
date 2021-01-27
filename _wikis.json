@@ -265,6 +265,16 @@
         "setOnly": []
     },
     {
+        "key": "pf",
+        "name": "Pikmin Fanon",
+        "url": "https://www.pikminfanon.com/w",
+        "articleUrl": "https://www.pikminfanon.com/wiki",
+        "aliases": [
+            "pikfan"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "pm",
         "name": "Power Master Wiki",
         "url": "https://powermasterwiki.com/w",

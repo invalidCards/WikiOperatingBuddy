@@ -116,8 +116,7 @@ bot.on('message', async msg => {
                     }
                     if (embedCount === Math.ceil(wikis.length / 24) - 1) {
                         embed.addField('Unsupported wikis', `The following wikis are not supported by WOB:
-• Hard Drop runs a very old version of MediaWiki, and its API is not compatible with the inner workings of this bot.
-• Pikmin Fanon is shutting down on September 1st, 2020, and will not be supported by this bot in the meantime.`);
+• Hard Drop runs a very old version of MediaWiki, and its API is not compatible with the inner workings of this bot.`);
                     }
                     msg.channel.send(embed);
                 }
