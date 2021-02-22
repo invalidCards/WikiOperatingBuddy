@@ -80,6 +80,17 @@
         "setOnly": []
     },
     {
+        "key": "dl",
+        "name": "Dragalia Lost Wiki",
+        "url": "https://dragalialost.wiki",
+        "articleUrl": "https://dragalialost.wiki/w",
+        "aliases": [
+            "dragalia",
+            "draglost"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "dq",
         "name": "Dragon Quest Wiki",
         "url": "https://dragon-quest.org/w",
