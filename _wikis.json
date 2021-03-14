@@ -444,6 +444,17 @@
         "setOnly": []
     },
     {
+        "key": "xs",
+        "name": "Xeno Series Wiki",
+        "url": "https://www.xenoserieswiki.org/w",
+        "articleUrl": "https://www.xenoserieswiki.org/wiki",
+        "aliases": [
+            "xeno",
+            "xc"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "zw",
         "name": "Zelda Wiki",
         "url": "https://zelda.gamepedia.com",
