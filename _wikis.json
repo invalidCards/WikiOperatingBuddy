@@ -266,8 +266,8 @@
     {
         "key": "nw",
         "name": "N Wiki",
-        "url": "http://www.niwanetwork.org/wiki",
-        "articleUrl": "http://www.niwanetwork.org/wiki",
+        "url": "https://www.niwanetwork.org/wiki",
+        "articleUrl": "https://www.niwanetwork.org/wiki",
         "aliases": [
             "n",
             "ntdo",
