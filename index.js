@@ -251,26 +251,33 @@ const realWikiName = (abbreviation) => {
 const getWikiObj = (wikiName) => {
     let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
     if (wiki.length) return wiki[0];
-    return false;
 };
 
 const getWikiBaseUrl = (wikiName) => {
     let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
     if (wiki.length) return wiki[0].url;
-    return false;
 };
+
+const getWikiArticleUrl = (wikiName) => {
+    let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
+    if (wiki.length) return wiki[0].articleUrl;
+}
 
 const fetchLink = async (wikiName, article) => {
     article = article.replace(/ /g, '_');
     let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${encodeURI(article)}&limit=1&redirects=resolve`);
-    if (!response.body[1].length) return false;
+    if (!response.body[1].length) return fetchLinkBackup(wikiName, article);
     return response.body[3][0];
 };
 
+const fetchLinkBackup = async (wikiName, article) => {
+    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=query&list=search&srsearch=${encodeURI(article)}&srnamespace=*&srlimit=1&format=json`);
+    if (response.body.query.searchinfo.totalhits === 0) return false;
+    return `${getWikiArticleUrl(wikiName)}/${encodeURI(response.body.query.search[0].title.replace(/ /g, '_'))}`
+}
+
 const fetchRawLink = (wikiName, article) => {
-    let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
-    if (!wiki.length) return false;
-    return `${wiki[0].articleUrl}/${encodeURI(article)}`;
+    return `${getWikiArticleUrl(wikiName)}/${encodeURI(article)}`;
 };
 
 bot.login(config.token);
