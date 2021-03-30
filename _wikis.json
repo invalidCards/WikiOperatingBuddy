@@ -232,8 +232,8 @@
     {
         "key": "md",
         "name": "Mediawiki (unaffiliated)",
-        "url": "https://mediawiki.org/w",
-        "articleUrl": "https://mediawiki.org/wiki",
+        "url": "https://www.mediawiki.org/w",
+        "articleUrl": "https://www.mediawiki.org/wiki",
         "aliases": [
             "m",
             "mediawiki"
