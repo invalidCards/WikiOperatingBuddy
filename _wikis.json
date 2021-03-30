@@ -230,6 +230,17 @@
         "setOnly": []
     },
     {
+        "key": "md",
+        "name": "Mediawiki (unaffiliated)",
+        "url": "https://mediawiki.org/w",
+        "articleUrl": "https://mediawiki.org/wiki",
+        "aliases": [
+            "m",
+            "mediawiki"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "mv",
         "name": "Marioverse Wiki",
         "url": "https://marioversewiki.com/w",
