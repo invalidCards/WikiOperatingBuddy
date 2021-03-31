@@ -266,7 +266,7 @@ const getWikiArticleUrl = (wikiName) => {
 const fetchLink = async (wikiName, article) => {
     article = article.replace(/ /g, '_');
     let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${encodeURI(article)}&limit=1&redirects=resolve`);
-    if (!response.body[1].length) return fetchLinkBackup(wikiName, article);
+    if (!response.body[1].length) return await fetchLinkBackup(wikiName, article);
     return response.body[3][0];
 };
 
