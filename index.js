@@ -3,9 +3,9 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 const needle = require('needle');
 
-const regexLink = /\[\[(.*?)(\|.*?)?\]\]/g;
-const regexTemp = /\{\{(.*?)(\|.*?)?\}\}/g;
-const regexRaw  = /--(.*?)(\|.*?)?--/g;
+const regexLink = /\[\[(.+?)(\|.*?)?\]\]/g;
+const regexTemp = /\{\{(.+?)(\|.*?)?\}\}/g;
+const regexRaw  = /--(.+?)(\|.*?)?--/g;
 
 const TYPE_NORMAL = 'normal';
 const TYPE_TEMPLATE = 'template';
@@ -164,6 +164,8 @@ bot.on('message', async msg => {
         if (content.search(regexRaw) > -1) {
             let matches = Array.from(content.matchAll(regexRaw), m => m[1]);
             for (let match of matches) {
+                match = match.replace(/^[^a-zA-Z]+/g, '').trim();
+                if (match === '') continue;
                 links.push({type: TYPE_RAW, query: match});
             }
         }

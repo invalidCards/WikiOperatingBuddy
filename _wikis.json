@@ -241,6 +241,18 @@
         "setOnly": []
     },
     {
+        "key": "mm",
+        "name": "Mega Man Wiki",
+        "url": "https://megamanwiki.com/w",
+        "articleUrl": "https://megamanwiki.com/wiki",
+        "aliases": [
+            "mmx",
+            "mmz",
+            "mmbn"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "mv",
         "name": "Marioverse Wiki",
         "url": "https://marioversewiki.com/w",
