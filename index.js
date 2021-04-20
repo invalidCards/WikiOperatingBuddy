@@ -145,8 +145,8 @@ bot.on('message', async msg => {
         }
     } else {
         let content = msg.cleanContent;
-        content = content.replace(/```.*?```/gm, '');
-        content = content.replace(/`.*?`/gm, '');
+        content = content.replace(/```.*?```/gms, '');
+        content = content.replace(/`.*?`/gms, '');
         content = content.replace(/https?[^ ]+?/gm, '');
         let links = [];
         if (content.search(regexLink) > -1) {
