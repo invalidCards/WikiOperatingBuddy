@@ -17,6 +17,7 @@ const db = require('better-sqlite3')('_prefs.db');
 bot.once('ready', () => {
     db.prepare('CREATE TABLE IF NOT EXISTS guilds (GuildID TEXT NOT NULL PRIMARY KEY, WikiKey TEXT NOT NULL)').run();
     db.prepare('CREATE TABLE IF NOT EXISTS channels (ChannelID TEXT NOT NULL PRIMARY KEY, WikiKey TEXT NOT NULL)').run();
+    db.prepare('CREATE TABLE IF NOT EXISTS users (UserID TEXT NOT NULL PRIMARY KEY, DisabledLinks TEXT)').run();
     bot.user.setActivity(`Nindies | ${config.prefix}help`, {type: 'PLAYING'});
     console.log(`Ready at ${new Date().toUTCString()} - ${bot.guilds.cache.size} guilds, ${bot.channels.cache.size} channels, ${bot.users.cache.size} users`);
 });
@@ -128,6 +129,7 @@ bot.on('message', async msg => {
 • \`${config.prefix}serverWiki <wiki>\` - sets the server's default wiki to the given wiki
 • \`${config.prefix}channelWiki <wiki>\` - overrides the server's default wiki for the current channel
 • \`${config.prefix}channelWiki default\` - removes a previously set override for the current channel
+• \`${config.prefix}disable none|raw|all\` - prevent the bot from parsing specific types of (or all) wiki links from your messages
 • \`${config.prefix}list\` - lists all available wikis and their aliases
 • \`${config.prefix}help\` - display this help message`);
 
@@ -142,8 +144,30 @@ bot.on('message', async msg => {
                 msg.channel.send(embed);
                 break;
             }
+            case 'disable': {
+                if (!['all','raw','none'].includes(args[0])) {
+                    msg.channel.send('Please supply one of the following values: `all`, `raw`, `none`.');
+                    return;
+                }
+
+                try {
+                    db.prepare('INSERT INTO users (UserID, DisabledLinks) VALUES (?, ?) ON CONFLICT(UserID) DO UPDATE SET DisabledLinks=excluded.DisabledLinks').run(msg.author.id, args[0]);
+                    let returnMessage = 'further messages you send will be parsed for all types of wiki links.';
+                    if (args[0] === 'raw') returnMessage = 'further messages you send will not be parsed for raw links.';
+                    else if (args[0] === 'all') returnMessage = 'none of your further messages will be parsed for wiki links.';
+                    msg.reply(returnMessage);
+                } catch(e) {
+                    msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                    console.error(e);
+                }
+                break;
+            }
         }
     } else {
+        let userpref = db.prepare('SELECT * FROM users WHERE UserID=?').get(msg.author.id);
+        if (userpref && userpref.DisabledLinks === 'all') {
+            return;
+        }
         let content = msg.cleanContent;
         content = content.replace(/```.*?```/gms, '');
         content = content.replace(/`.*?`/gms, '');
@@ -168,6 +192,9 @@ bot.on('message', async msg => {
                 if (match === '') continue;
                 links.push({type: TYPE_RAW, query: match});
             }
+        }
+        if (userpref && userpref.DisabledLinks === 'raw') {
+            links = links.filter(l => l.type !== TYPE_RAW);
         }
         if (links.length) {
             let wiki = db.prepare('SELECT WikiKey FROM channels WHERE ChannelID=?').get(msg.channel.id);
