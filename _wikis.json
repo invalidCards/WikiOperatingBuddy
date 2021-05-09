@@ -413,6 +413,20 @@
         "setOnly": []
     },
     {
+        "key": "uk",
+        "name": "Ukikipedia",
+        "url": "https://ukikipedia.net",
+        "articleUrl": "https://ukikipedia.net/wiki",
+        "aliases": [
+            "uk",
+            "uki",
+            "kiki",
+            "ukp",
+            "sm64e"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "wb",
         "name": "WikiBound",
         "url": "https://wikibound.info/w",
