@@ -14,6 +14,20 @@ const TYPE_RAW = 'raw';
 var wikis = require('./_wikis.json');
 const db = require('better-sqlite3')('_prefs.db');
 
+function handleSendError(e){
+    switch(e.message){
+        case "Missing Permissions":
+            this.channel.send("Sorry, I couldn't respond to your message. I need the `Embed links` permission to function properly").catch(()=>{}) //Try to send a message without an embed, if it fails to send, don't care ¯\_(ツ)_/¯
+            break;
+        case "Invalid Form Body": //Happens, when we make a mistake and try to send too much
+            this.channel.send("Due to an internal error the message failed to send\nIf this keeps happening, please report this").catch(()=>{})
+            break;
+        default:
+            this.channel.send("An unexpected error occurred while trying to respond ("+e.message+")\nTry again later. If this keeps happening, please report this").catch(()=>{})
+            break;
+    }
+}
+
 bot.once('ready', () => {
     db.prepare('CREATE TABLE IF NOT EXISTS guilds (GuildID TEXT NOT NULL PRIMARY KEY, WikiKey TEXT NOT NULL)').run();
     db.prepare('CREATE TABLE IF NOT EXISTS channels (ChannelID TEXT NOT NULL PRIMARY KEY, WikiKey TEXT NOT NULL)').run();
@@ -35,7 +49,7 @@ bot.on('message', async msg => {
                 }
 
                 if (msg.channel.type === 'dm') {
-                    msg.channel.send('Please use `channelWiki` to set the preferred wiki for our private conversations!');
+                    msg.channel.send('Please use `channelWiki` to set the preferred wiki for our private conversations!').catch(handleSendError.bind(msg));
                     return;
                 }
 
@@ -43,13 +57,13 @@ bot.on('message', async msg => {
                 if (wikiKey) {
                     try {
                         db.prepare('INSERT INTO guilds (GuildID, WikiKey) VALUES(?, ?) ON CONFLICT(GuildID) DO UPDATE SET WikiKey=excluded.WikiKey').run(msg.guild.id, wikiKey);
-                        msg.channel.send(`The wiki for this server has been successfully set to **${getWikiObj(wikiKey).name}**!`);
+                        msg.channel.send(`The wiki for this server has been successfully set to **${getWikiObj(wikiKey).name}**!`).catch(handleSendError.bind(msg));
                     } catch(e) {
-                        msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                        msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.').catch(handleSendError.bind(msg));
                         console.error(e);
                     }
                 } else {
-                    msg.channel.send(`Sorry, I did not recognise the wiki **${args.join(' ')}**. Please make sure you typed it correctly and try again. For a full list, use *${config.prefix}list*.`);
+                    msg.channel.send(`Sorry, I did not recognise the wiki **${args.join(' ')}**. Please make sure you typed it correctly and try again. For a full list, use *${config.prefix}list*.`).catch(handleSendError.bind(msg));
                 }
                 break;
             }
@@ -61,20 +75,20 @@ bot.on('message', async msg => {
                 if (msg.channel.type !== 'dm') {
                     let serverRow = db.prepare('SELECT * FROM guilds WHERE GuildID=?').get(msg.guild.id);
                     if (!serverRow) {
-                        msg.channel.send(`Please set the default wiki for the guild first with *${config.prefix}serverWiki*.`);
+                        msg.channel.send(`Please set the default wiki for the guild first with *${config.prefix}serverWiki*.`).catch(handleSendError.bind(msg));
                     }
                 }
 
                 if (args.join(' ') === 'default') {
                     if (msg.channel.type === 'dm') {
-                        msg.channel.send(`Sorry, you can't remove the set wiki of a private conversation. You can still change it with this command - for a full list, use *${config.prefix}list*.`);
+                        msg.channel.send(`Sorry, you can't remove the set wiki of a private conversation. You can still change it with this command - for a full list, use *${config.prefix}list*.`).catch(handleSendError.bind(msg));
                         return;
                     }
                     try {
                         db.prepare('DELETE FROM channels WHERE ChannelID=?').run(msg.channel.id);
-                        msg.channel.send('The wiki for this channel has been reset to the default for the server.');
+                        msg.channel.send('The wiki for this channel has been reset to the default for the server.').catch(handleSendError.bind(msg));
                     } catch(e) {
-                        msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                        msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.').catch(handleSendError.bind(msg));
                         console.error(e);
                     }
                 } else {
@@ -82,13 +96,13 @@ bot.on('message', async msg => {
                     if (wikiKey) {
                         try {
                             db.prepare('INSERT INTO channels (ChannelID, WikiKey) VALUES (?, ?) ON CONFLICT(ChannelID) DO UPDATE SET WikiKey=excluded.WikiKey').run(msg.channel.id, wikiKey);
-                            msg.channel.send(`The wiki for this channel has been successfully set to **${getWikiObj(wikiKey).name}**!`);
+                            msg.channel.send(`The wiki for this channel has been successfully set to **${getWikiObj(wikiKey).name}**!`).catch(handleSendError.bind(msg));
                         } catch(e) {
-                            msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                            msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.').catch(handleSendError.bind(msg));
                             console.error(e);
                         }
                     } else {
-                        msg.channel.send(`Sorry, I did not recognise the wiki **${args.join(' ')}**. Please make sure you typed it correctly and try again. For a full list, use *${config.prefix}list*.`);
+                        msg.channel.send(`Sorry, I did not recognise the wiki **${args.join(' ')}**. Please make sure you typed it correctly and try again. For a full list, use *${config.prefix}list*.`).catch(handleSendError.bind(msg));
                     }
                 }
                 break;
@@ -99,7 +113,7 @@ bot.on('message', async msg => {
                 }
                 delete require.cache[require.resolve('./_wikis.json')];
                 wikis = require('./_wikis.json');
-                msg.channel.send('Wiki JSON reloaded from file!');
+                msg.channel.send('Wiki JSON reloaded from file!').catch(handleSendError.bind(msg));
                 break;
             }
             case 'list': {
@@ -119,7 +133,7 @@ bot.on('message', async msg => {
                         embed.addField('Unsupported wikis', `The following wikis are not supported by WOB:
 • Hard Drop runs a very old version of MediaWiki, and its API is not compatible with the inner workings of this bot.`);
                     }
-                    msg.channel.send(embed);
+                    msg.channel.send(embed).catch(handleSendError.bind(msg));
                 }
                 break;
             }
@@ -141,12 +155,12 @@ bot.on('message', async msg => {
 
                 embed.addField('Feedback and suggestions', 'If you have any ideas, or features you are missing, please contact `invalidCards#0380` with your suggestion, and I will try to add it to the bot!');
                 embed.addField('Code', 'The bot is fully open-source - you can look at [its GitHub repo](https://github.com/invalidCards/WikiOperatingBuddy) to see the complete inner workings!');
-                msg.channel.send(embed);
+                msg.channel.send(embed).catch(handleSendError.bind(msg));
                 break;
             }
             case 'disable': {
                 if (!['all','raw','none'].includes(args[0])) {
-                    msg.channel.send('Please supply one of the following values: `all`, `raw`, `none`.');
+                    msg.channel.send('Please supply one of the following values: `all`, `raw`, `none`.').catch(handleSendError.bind(msg));
                     return;
                 }
 
@@ -157,7 +171,7 @@ bot.on('message', async msg => {
                     else if (args[0] === 'all') returnMessage = 'none of your further messages will be parsed for wiki links.';
                     msg.reply(returnMessage);
                 } catch(e) {
-                    msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                    msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.').catch(handleSendError.bind(msg));
                     console.error(e);
                 }
                 break;
@@ -200,12 +214,12 @@ bot.on('message', async msg => {
             let wiki = db.prepare('SELECT WikiKey FROM channels WHERE ChannelID=?').get(msg.channel.id);
             if (!wiki) {
                 if (msg.channel.type === 'dm') {
-                    msg.channel.send(`Our private conversation does not have a wiki set. Please use the *${config.prefix}channelWiki* command to set it up.`);
+                    msg.channel.send(`Our private conversation does not have a wiki set. Please use the *${config.prefix}channelWiki* command to set it up.`).catch(handleSendError.bind(msg));
                     return;
                 }
                 wiki = db.prepare('SELECT WikiKey FROM guilds WHERE GuildID=?').get(msg.guild.id);
                 if (!wiki) {
-                    msg.channel.send(`This server doesn't have a default wiki set yet. If you are an admin, use *${config.prefix}serverWiki* to set one. If you're not, go yell at one.`);
+                    msg.channel.send(`This server doesn't have a default wiki set yet. If you are an admin, use *${config.prefix}serverWiki* to set one. If you're not, go yell at one.`).catch(handleSendError.bind(msg));
                     return;
                 } else {
                     wiki = wiki.WikiKey;
@@ -260,7 +274,7 @@ bot.on('message', async msg => {
                 }
             }
             if (messageContent.split('\n').length > 1) {
-                msg.channel.send(messageContent);
+                msg.channel.send(messageContent).catch(handleSendError.bind(msg));
             }
         }
     }
