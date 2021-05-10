@@ -267,21 +267,21 @@ bot.on('message', async msg => {
         }
     }
     catch(e) {
-        if(e.name == "DiscordAPIError") {
+        if(e.name == 'DiscordAPIError') {
             switch(e.message) {
-                case "Missing Permissions":
-                    await msg.channel.send("Sorry, I couldn't respond to your message. I need the `Embed links` permission to function properly").catch(()=>{}) //Try to send a message without an embed, if it fails to send, don't care ¯\_(ツ)_/¯
+                case 'Missing Permissions':
+                    await msg.channel.send('Sorry, I couldn\'t respond to your message. I need the `Embed links` permission to function properly.').catch(()=>{}) //Try to send a message without an embed, if it fails to send, don't care ¯\_(ツ)_/¯
                     break;
-                case "Invalid Form Body": //Happens, when we make a mistake and try to send too much
-                    await msg.channel.send("Due to an internal error the message failed to send\nIf this keeps happening, please report this").catch(()=>{})
+                case 'Invalid Form Body': //Happens, when we make a mistake and try to send too much
+                    await msg.channel.send('Due to an internal error the message failed to send\nIf this keeps happening, please report this!').catch(()=>{})
                     break;
                 default:
-                    await msg.channel.send("An unexpected error occurred while trying to respond ("+e.message+")\nTry again later. If this keeps happening, please report this").catch(()=>{})
+                    await msg.channel.send(`An unexpected error occurred while trying to respond (${e.message})\nTry again later. If this keeps happening, please report this!`).catch(()=>{})
                     break;
             }
         }
         else {
-            await msg.channel.send("An unexpected error occurred while trying to respond ("+e.name+": "+e.message+")\nTry again later. If this keeps happening, please report this").catch(()=>{})
+            await msg.channel.send(`An unexpected error occurred while trying to respond (${e.name}: ${e.message})\nTry again later. If this keeps happening, please report this!`).catch(()=>{})
         }
     }
 });
