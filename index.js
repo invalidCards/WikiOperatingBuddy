@@ -173,6 +173,8 @@ bot.on('message', async msg => {
             content = content.replace(/```.*?```/gms, '');
             content = content.replace(/`.*?`/gms, '');
             content = content.replace(/https?[^ ]+?/gm, '');
+            content = content.replace(/^> .*?$/gm, '');
+            content = content.replace(/\n{2,}/g, '\n');
             let links = [];
             if (content.search(regexLink) > -1) {
                 let matches = Array.from(content.matchAll(regexLink), m => m[1]);
