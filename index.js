@@ -118,7 +118,7 @@ bot.on('message', async msg => {
                         }
                         if (embedCount === Math.ceil(wikis.length / 24) - 1) {
                             embed.addField('Unsupported wikis', `The following wikis are not supported by WOB:
-    • Hard Drop runs a very old version of MediaWiki, and its API is not compatible with the inner workings of this bot.`);
+• Hard Drop runs a very old version of MediaWiki, and its API is not compatible with the inner workings of this bot.`);
                         }
                         await msg.channel.send(embed);
                     }
@@ -127,18 +127,18 @@ bot.on('message', async msg => {
                 case 'help': {
                     let embed = new Discord.MessageEmbed().setColor('#B22222').setTitle('WOB Help').setTimestamp();
                     embed.addField('Commands', `
-    • \`${config.prefix}serverWiki <wiki>\` - sets the server's default wiki to the given wiki
-    • \`${config.prefix}channelWiki <wiki>\` - overrides the server's default wiki for the current channel
-    • \`${config.prefix}channelWiki default\` - removes a previously set override for the current channel
-    • \`${config.prefix}disable none|raw|all\` - prevent the bot from parsing specific types of (or all) wiki links from your messages
-    • \`${config.prefix}list\` - lists all available wikis and their aliases
-    • \`${config.prefix}help\` - display this help message`);
-    
-                    embed.addField('Linking syntax', `
-    • \`[[search term]]\` - uses the API of the default wiki of the channel or server to find an existing page with the same name
-    • \`[[bp:search term]]\` - uses the API of a wiki that is not the default channel or server wiki (in this case Bulbapedia) to find an existing page with the same name (see \`${config.prefix}list\` for a full list of usable aliases)
-    • \`{{search term}}\` - uses the API (same as above) to find an existing template with the same name
-    • \`--search term--\` - creates a direct link to the search term, regardless of whether or not the page exists`);
+• \`${config.prefix}serverWiki <wiki>\` - sets the server's default wiki to the given wiki
+• \`${config.prefix}channelWiki <wiki>\` - overrides the server's default wiki for the current channel
+• \`${config.prefix}channelWiki default\` - removes a previously set override for the current channel
+• \`${config.prefix}disable none|raw|all\` - prevent the bot from parsing specific types of (or all) wiki links from your messages
+• \`${config.prefix}list\` - lists all available wikis and their aliases
+• \`${config.prefix}help\` - display this help message`);
+
+                embed.addField('Linking syntax', `
+• \`[[search term]]\` - uses the API of the default wiki of the channel or server to find an existing page with the same name
+• \`[[bp:search term]]\` - uses the API of a wiki that is not the default channel or server wiki (in this case Bulbapedia) to find an existing page with the same name (see \`${config.prefix}list\` for a full list of usable aliases)
+• \`{{search term}}\` - uses the API (same as above) to find an existing template with the same name
+• \`--search term--\` - creates a direct link to the search term, regardless of whether or not the page exists`);
     
                     embed.addField('Feedback and suggestions', 'If you have any ideas, or features you are missing, please contact `invalidCards#0380` with your suggestion, and I will try to add it to the bot!');
                     embed.addField('Code', 'The bot is fully open-source - you can look at [its GitHub repo](https://github.com/invalidCards/WikiOperatingBuddy) to see the complete inner workings!');
