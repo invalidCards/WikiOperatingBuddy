@@ -415,10 +415,10 @@
     {
         "key": "uk",
         "name": "Ukikipedia",
-        "url": "https://ukikipedia.net",
+        "url": "https://ukikipedia.net/mediawiki",
         "articleUrl": "https://ukikipedia.net/wiki",
         "aliases": [
-            "uk",
+            "ukiki",
             "uki",
             "kiki",
             "ukp",
