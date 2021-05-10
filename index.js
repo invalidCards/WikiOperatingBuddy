@@ -23,7 +23,7 @@ bot.once('ready', () => {
 });
 
 bot.on('message', async msg => {
-    try{
+    try {
         if (msg.author.bot) {
             return;
         }
@@ -266,9 +266,9 @@ bot.on('message', async msg => {
             }
         }
     }
-    catch(e){
+    catch(e) {
         if(e.name == "DiscordAPIError") {
-            switch(e.message){
+            switch(e.message) {
                 case "Missing Permissions":
                     await msg.channel.send("Sorry, I couldn't respond to your message. I need the `Embed links` permission to function properly").catch(()=>{}) //Try to send a message without an embed, if it fails to send, don't care ¯\_(ツ)_/¯
                     break;
@@ -280,7 +280,7 @@ bot.on('message', async msg => {
                     break;
             }
         }
-        else{
+        else {
             await msg.channel.send("An unexpected error occurred while trying to respond ("+e.name+": "+e.message+")\nTry again later. If this keeps happening, please report this").catch(()=>{})
         }
     }
