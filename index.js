@@ -177,12 +177,14 @@ bot.on('message', async msg => {
             if (content.search(regexLink) > -1) {
                 let matches = Array.from(content.matchAll(regexLink), m => m[1]);
                 for (let match of matches) {
+                    if (match.startsWith('#')) continue;
                     links.push({type: TYPE_NORMAL, query: match});
                 }
             }
             if (content.search(regexTemp) > -1) {
                 let matches = Array.from(content.matchAll(regexTemp), m => m[1]);
                 for (let match of matches) {
+                    if (match.startsWith('#')) continue;
                     links.push({type: TYPE_TEMPLATE, query: match});
                 }
             }
