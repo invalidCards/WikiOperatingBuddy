@@ -225,7 +225,7 @@
         "articleUrl": "https://starfoxwiki.info/wiki",
         "aliases": [
             "fox",
-            "sf"
+            "stf"
         ],
         "setOnly": []
     },
@@ -367,8 +367,6 @@
         "url": "https://www.mariowiki.com",
         "articleUrl": "https://www.mariowiki.com",
         "aliases": [
-            "m",
-            "mw",
             "smw",
             "mario",
             "mk",
@@ -474,7 +472,7 @@
         "url": "https://warswiki.org/w",
         "articleUrl": "https://warswiki.org/wiki",
         "aliases": [
-            "aw",
+            "avw",
             "adv",
             "dsw"
         ],
