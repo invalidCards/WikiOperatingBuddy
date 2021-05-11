@@ -338,7 +338,7 @@ for (let obj of wikis) {
     keys.push(obj.key.toLowerCase());
     keys.push(...obj.aliases.map(a => a.toLowerCase()));
 }
-let reserved = ['default', 'none', '-', 'mediawiki'];
+let reserved = ['default', 'none', '-', 'mediawiki', 'help', 'template', 'talk', 'user', 'project', 'file', 'category', 'forum'];
 keys.push(...reserved);
 
 var duplicates = keys.reduce((acc, el, i, arr) => {
