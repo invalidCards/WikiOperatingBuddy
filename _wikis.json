@@ -468,7 +468,7 @@
     },
     {
         "key": "wp",
-        "name":"Wikipedia"
+        "name":"Wikipedia (English)",
         "url":"https://en.wikipedia.org/w",
         "articleUrl":"https://en.wikipedia.org/wiki",
         "setOnly": []
