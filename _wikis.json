@@ -467,6 +467,13 @@
         "setOnly": []
     },
     {
+        "key": "wp",
+        "name":"Wikipedia"
+        "url":"https://en.wikipedia.org/w",
+        "articleUrl":"https://en.wikipedia.org/wiki",
+        "setOnly": []
+    },
+    {
         "key": "ww",
         "name": "Wars Wiki",
         "url": "https://warswiki.org/w",
