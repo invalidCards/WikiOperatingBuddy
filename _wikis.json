@@ -471,6 +471,10 @@
         "name":"Wikipedia (English)",
         "url":"https://en.wikipedia.org/w",
         "articleUrl":"https://en.wikipedia.org/wiki",
+        "aliases": [
+            "wpen",
+            "enwp"
+        ],
         "setOnly": []
     },
     {
