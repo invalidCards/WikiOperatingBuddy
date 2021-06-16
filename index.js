@@ -318,7 +318,7 @@ const getWikiArticleUrl = (wikiName) => {
 
 const fetchLink = async (wikiName, article) => {
     article = article.replace(/ /g, '_');
-    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${encodeURI(article)}&limit=2&redirects=resolve`);
+    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${encodeURI(article)}&limit=3&redirects=resolve`);
     if (!response.body[1].length) return await fetchLinkBackup(wikiName, article);
     return response.body[3][0];
 };
