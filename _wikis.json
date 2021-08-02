@@ -242,6 +242,16 @@
         "setOnly": []
     },
     {
+        "key": "mi",
+        "name": "MiiWiki (unaffiliated)",
+        "url": "https://miiwiki.miraheze.org/w",
+        "articleUrl": "https://miiwiki.miraheze.org/wiki",
+        "aliases": [
+            "mii"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "mm",
         "name": "Mega Man Wiki",
         "url": "https://megamanwiki.com/w",
