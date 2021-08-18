@@ -243,9 +243,9 @@
     },
     {
         "key": "mi",
-        "name": "MiiWiki (unaffiliated)",
-        "url": "https://miiwiki.miraheze.org/w",
-        "articleUrl": "https://miiwiki.miraheze.org/wiki",
+        "name": "MiiWiki",
+        "url": "https://miiwiki.org/w",
+        "articleUrl": "https://miiwiki.org/wiki",
         "aliases": [
             "mii"
         ],
