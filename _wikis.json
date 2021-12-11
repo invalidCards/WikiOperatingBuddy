@@ -231,6 +231,16 @@
         "setOnly": []
     },
     {
+        "key": "mana",
+        "name": "Wiki of Mana",
+        "url": "https://wikiofmana.com/w",
+        "articleUrl": "https://wikiofmana.com/wiki",
+        "aliases": [
+            "wom"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "md",
         "name": "Mediawiki (unaffiliated)",
         "url": "https://www.mediawiki.org/w",
@@ -351,6 +361,16 @@
         "setOnly": []
     },
     {
+        "key": "saga",
+        "name": "SaGa Wiki",
+        "url": "https://sagawiki.org/w",
+        "articleUrl": "https://sagawiki.org/wiki",
+        "aliases": [
+            "ffl"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "se",
         "name": "Square Enix Wiki",
         "url": "https://seiwanetwork.org/wiki",
@@ -422,6 +442,18 @@
         "setOnly": []
     },
     {
+        "key": "tfw",
+        "name": "Triforce Wiki",
+        "url": "https://triforcewiki.com/w",
+        "articleUrl": "https://triforcewiki.com/wiki",
+        "aliases": [
+            "triforce",
+            "tri",
+            "trif"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "uk",
         "name": "Ukikipedia",
         "url": "https://ukikipedia.net/mediawiki",
@@ -479,9 +511,9 @@
     },
     {
         "key": "wp",
-        "name":"Wikipedia (English)",
-        "url":"https://en.wikipedia.org/w",
-        "articleUrl":"https://en.wikipedia.org/wiki",
+        "name": "Wikipedia (English)",
+        "url": "https://en.wikipedia.org/w",
+        "articleUrl": "https://en.wikipedia.org/wiki",
         "aliases": [
             "wpen",
             "enwp"
@@ -519,9 +551,7 @@
         "aliases": [
             "link",
             "lnk",
-            "zelda",
-            "tri",
-            "trif"
+            "zelda"
         ],
         "setOnly": []
     }

@@ -36,7 +36,7 @@ bot.on('message', async msg => {
                     }
     
                     if (msg.channel.type === 'dm') {
-                        await msg.channel.send('Please use `channelWiki` to set the preferred wiki for our private conversations!')
+                        await msg.channel.send('Please use `channelWiki` to set the preferred wiki for our private conversations!');
                         return;
                     }
     
@@ -44,9 +44,9 @@ bot.on('message', async msg => {
                     if (wikiKey) {
                         try {
                             db.prepare('INSERT INTO guilds (GuildID, WikiKey) VALUES(?, ?) ON CONFLICT(GuildID) DO UPDATE SET WikiKey=excluded.WikiKey').run(msg.guild.id, wikiKey);
-                            await msg.channel.send(`The wiki for this server has been successfully set to **${getWikiObj(wikiKey).name}**!`)
+                            await msg.channel.send(`The wiki for this server has been successfully set to **${getWikiObj(wikiKey).name}**!`);
                         } catch(e) {
-                            await msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.')
+                            await msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
                             console.error(e);
                         }
                     } else {
@@ -134,7 +134,7 @@ bot.on('message', async msg => {
 • \`${config.prefix}list\` - lists all available wikis and their aliases
 • \`${config.prefix}help\` - display this help message`);
 
-                embed.addField('Linking syntax', `
+                    embed.addField('Linking syntax', `
 • \`[[search term]]\` - uses the API of the default wiki of the channel or server to find an existing page with the same name
 • \`[[bp:search term]]\` - uses the API of a wiki that is not the default channel or server wiki (in this case Bulbapedia) to find an existing page with the same name (see \`${config.prefix}list\` for a full list of usable aliases)
 • \`{{search term}}\` - uses the API (same as above) to find an existing template with the same name
@@ -274,18 +274,18 @@ bot.on('message', async msg => {
         if(e.name == 'DiscordAPIError') {
             switch(e.message) {
                 case 'Missing Permissions':
-                    await msg.channel.send('Sorry, I couldn\'t respond to your message. I need the `Embed links` permission to function properly.').catch(()=>{}) //Try to send a message without an embed, if it fails to send, don't care ¯\_(ツ)_/¯
+                    await msg.channel.send('Sorry, I couldn\'t respond to your message. I need the `Embed links` permission to function properly.').catch(()=>{}); //Try to send a message without an embed, if it fails to send, don't care ¯\_(ツ)_/¯
                     break;
                 case 'Invalid Form Body': //Happens, when we make a mistake and try to send too much
-                    await msg.channel.send('Due to an internal error the message failed to send\nIf this keeps happening, please report this!').catch(()=>{})
+                    await msg.channel.send('Due to an internal error the message failed to send\nIf this keeps happening, please report this!').catch(()=>{});
                     break;
                 default:
-                    await msg.channel.send(`An unexpected error occurred while trying to respond (${e.message})\nTry again later. If this keeps happening, please report this!`).catch(()=>{})
+                    await msg.channel.send(`An unexpected error occurred while trying to respond (${e.message})\nTry again later. If this keeps happening, please report this!`).catch(()=>{});
                     break;
             }
         }
         else {
-            await msg.channel.send(`An unexpected error occurred while trying to respond (${e.name}: ${e.message})\nTry again later. If this keeps happening, please report this!`).catch(()=>{})
+            await msg.channel.send(`An unexpected error occurred while trying to respond (${e.name}: ${e.message})\nTry again later. If this keeps happening, please report this!`).catch(()=>{});
         }
     }
 });
@@ -314,7 +314,7 @@ const getWikiBaseUrl = (wikiName) => {
 const getWikiArticleUrl = (wikiName) => {
     let wiki = wikis.filter(w => w.key === realWikiName(wikiName));
     if (wiki.length) return wiki[0].articleUrl;
-}
+};
 
 const fetchLink = async (wikiName, article) => {
     article = article.replace(/ /g, '_');
@@ -326,8 +326,8 @@ const fetchLink = async (wikiName, article) => {
 const fetchLinkBackup = async (wikiName, article) => {
     let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=query&list=search&srsearch=${eURIC(article)}&srnamespace=*&srlimit=1&format=json`);
     if (response.body.query.searchinfo.totalhits === 0) return false;
-    return `${getWikiArticleUrl(wikiName)}/${encodeURI(response.body.query.search[0].title.replace(/ /g, '_'))}`
-}
+    return `${getWikiArticleUrl(wikiName)}/${encodeURI(response.body.query.search[0].title.replace(/ /g, '_'))}`;
+};
 
 const fetchRawLink = (wikiName, article) => {
     return `${getWikiArticleUrl(wikiName)}/${encodeURI(article)}`;
@@ -335,7 +335,7 @@ const fetchRawLink = (wikiName, article) => {
 
 const eURIC = (component) => {
     return encodeURIComponent(component).replace(/%3A/g, ':');
-}
+};
 
 let keys = [];
 for (let obj of wikis) {
@@ -352,17 +352,17 @@ var duplicates = keys.reduce((acc, el, i, arr) => {
 if (duplicates.length > 0) {
     let msg = 'Duplicate keys/aliases detected! Please resolve these before attempting to restart the bot.';
     for (let dupe of duplicates) {
-        msg += `\n- Duplicate "${dupe}":`
+        msg += `\n- Duplicate "${dupe}":`;
         let foundKeys = wikis.filter(w => w.key === dupe);
         for (let foundKey of foundKeys) {
             msg += `\n - Key of ${foundKey.name}`;
         }
         let foundAliases = wikis.filter(w => w.aliases.includes(dupe));
         for (let foundAlias of foundAliases) {
-            msg += `\n - Alias of ${foundAlias.name} (${foundAlias.aliases.filter(a => a === dupe).length} time(s))`
+            msg += `\n - Alias of ${foundAlias.name} (${foundAlias.aliases.filter(a => a === dupe).length} time(s))`;
         }
         if (reserved.includes(dupe)) {
-            msg += `\n - Built-in reserved keyword`;
+            msg += '\n - Built-in reserved keyword';
         }
     }
     console.log(msg);
