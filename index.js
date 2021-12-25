@@ -318,13 +318,13 @@ const getWikiArticleUrl = (wikiName) => {
 
 const fetchLink = async (wikiName, article) => {
     article = article.replace(/ /g, '_');
-    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${eURIC(article)}&limit=3&redirects=resolve`);
+    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${eURIC(article)}&redirects=resolve&format=json`);
     if (!response.body[1].length) return await fetchLinkBackup(wikiName, article);
     return response.body[3][0];
 };
 
 const fetchLinkBackup = async (wikiName, article) => {
-    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=query&list=search&srsearch=${eURIC(article)}&srnamespace=*&srlimit=1&format=json`);
+    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=query&list=search&srsearch=${eURIC(article)}&srnamespace=*&format=json`);
     if (response.body.query.searchinfo.totalhits === 0) return false;
     return `${getWikiArticleUrl(wikiName)}/${encodeURI(response.body.query.search[0].title.replace(/ /g, '_'))}`;
 };
