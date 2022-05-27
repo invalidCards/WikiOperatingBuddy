@@ -114,6 +114,18 @@
         ],
         "setOnly": []
     },
+        {
+        "key": "eo",
+        "name": "Fanon Wiki",
+        "url": "https://fanonwiki.org/w",
+        "articleUrl": "https://fanonwiki.org/wiki",
+        "aliases": [
+            "fanon",
+            "fan",
+            "fanw"
+        ],
+        "setOnly": []
+    },
     {
         "key": "fe",
         "name": "Fire Emblem Wiki",
