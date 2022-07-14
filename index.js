@@ -330,7 +330,7 @@ const fetchLinkBackup = async (wikiName, article) => {
 };
 
 const fetchRawLink = (wikiName, article) => {
-    return `${getWikiArticleUrl(wikiName)}/${encodeURI(article)}`;
+    return `${getWikiArticleUrl(wikiName)}/${encodeURI(article.replaceAll(' ', '_'))}`;
 };
 
 const eURIC = (component) => {
