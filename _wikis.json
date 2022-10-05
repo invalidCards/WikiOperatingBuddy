@@ -43,8 +43,7 @@
         "url": "https://crashbandicootwiki.com/w",
         "articleUrl": "https://crashbandicootwiki.com/wiki",
         "aliases": [
-            "crash",
-            "cb"
+            "crash"
         ],
         "setOnly": []
     },
@@ -260,6 +259,18 @@
         "aliases": [
             "m",
             "mdw"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "me",
+        "name": "MediEvil Wiki",
+        "url": "https://medievil.wiki/",
+        "articleUrl": "https://medievil.wiki/w",
+        "aliases": [
+            "fortesque",
+            "med",
+            "medievil"
         ],
         "setOnly": []
     },
