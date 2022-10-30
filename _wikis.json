@@ -183,6 +183,16 @@
         "setOnly": []
     },
     {
+        "key": "hp",
+        "name": "Hidden Palace",
+        "url": "https://hiddenpalace.org/w",
+        "articleUrl": "https://hiddenpalace.org",
+        "aliases": [
+            "hiddenpalace"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "ic",
         "name": "Icaruspedia",
         "url": "https://www.kidicaruswiki.org/w",
@@ -270,7 +280,8 @@
         "aliases": [
             "fortesque",
             "med",
-            "medievil"
+            "medievil",
+            "mew"
         ],
         "setOnly": []
     },
@@ -461,6 +472,16 @@
             "ssb",
             "ssbu",
             "smashwiki"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "tcrf",
+        "name": "The Cutting Room Floor",
+        "url": "https://tcrf.net",
+        "articleUrl": "https://tcrf.net",
+        "aliases": [
+            "cuttingroomfloor"
         ],
         "setOnly": []
     },
