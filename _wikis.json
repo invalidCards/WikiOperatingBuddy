@@ -344,6 +344,21 @@
         "setOnly": []
     },
     {
+        "key": "pc",
+        "name": "Pokémon Central Wiki",
+        "url": "https://wiki.pokemoncentral.it/",
+        "articleUrl": "https://wiki.pokemoncentral.it/",
+        "aliases": [
+            "poke-it",
+            "pkm-it",
+            "pkmn-it",
+            "pok-it",
+            "pika-it",
+            "pokemon-it"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "pf",
         "name": "Pikmin Fanon",
         "url": "https://pikminfanon.com/w",
@@ -427,6 +442,46 @@
             "mk",
             "mp",
             "mari"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "sm-de",
+        "name": "MarioWiki",
+        "url": "https://mariowiki.net/w",
+        "articleUrl": "https://mariowiki.net/wiki/",
+        "aliases": [
+            "smw-de",
+            "mario-de",
+            "mk-de",
+            "mp-de",
+            "mari-de",
+            "smwde",
+            "mariode",
+            "mkde",
+            "mpde",
+            "maride"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "sm-it",
+        "name": "Super Mario Wiki (Mario's Castle)",
+        "url": "https://www.mariowiki.it/",
+        "articleUrl": "https://www.mariowiki.it/",
+        "aliases": [
+            "marioscastle",
+            "smw-it",
+            "mario-it",
+            "mk-it",
+            "mp-it",
+            "mari-it",
+            "smit",
+            "smwit",
+            "marioit",
+            "mkit",
+            "mpit",
+            "mariit"
         ],
         "setOnly": []
     },
@@ -523,6 +578,21 @@
         "setOnly": []
     },
     {
+        "key": "wd",
+        "name": "WikiDex",
+        "url": "https://www.wikidex.net/",
+        "articleUrl": "https://www.wikidex.net/wiki",
+        "aliases": [
+            "poke-es",
+            "pkm-es",
+            "pkmn-es",
+            "pok-es",
+            "pika-es",
+            "pokemon-es"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "wk",
         "name": "WiKirby",
         "url": "https://wikirby.com/w",
@@ -558,6 +628,17 @@
         "setOnly": []
     },
     {
+        "key": "xp",
+        "name": "Xenopedia",
+        "url": "https://www.xenopedia.it/",
+        "articleUrl": "https://www.xenopedia.it/",
+        "aliases": [
+            "xeno-it",
+            "xc-it"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "xs",
         "name": "Xeno Series Wiki",
         "url": "https://www.xenoserieswiki.org/w",
@@ -565,6 +646,18 @@
         "aliases": [
             "xeno",
             "xc"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "zp",
+        "name": "Zeldapendium",
+        "url": "https://www.zeldapendium.de/w",
+        "articleUrl": "https://www.zeldapendium.de/wiki",
+        "aliases": [
+            "link-de",
+            "lnk-de",
+            "zelda-de"
         ],
         "setOnly": []
     },
