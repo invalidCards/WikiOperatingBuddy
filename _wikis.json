@@ -203,7 +203,36 @@
             "ink",
             "inkp",
             "splat",
+            "splatoon",
             "squid"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "ip-es",
+        "name": "Inkipedia ES",
+        "url": "https://es.splatoonwiki.org/w",
+        "articleUrl": "https://es.splatoonwiki.org/wiki/",
+        "aliases": [
+            "ink-es",
+            "inkp-es",
+            "splat-es",
+            "splatoon-es",
+            "squid-es"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "ip-fr",
+        "name": "Inkipedia FR",
+        "url": "https://fr.splatoonwiki.org/w",
+        "articleUrl": "https://fr.splatoonwiki.org/wiki/",
+        "aliases": [
+            "ink-fr",
+            "inkp-fr",
+            "splat-fr",
+            "splatoon-fr",
+            "squid-fr"
         ],
         "setOnly": []
     },
@@ -543,6 +572,18 @@
             "kiki",
             "ukp",
             "sm64e"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "Wapopedia",
+        "name": "Wapopedia",
+        "url": "https://drawntolife.wiki/w",
+        "articleUrl": "https://drawntolife.wiki/en/",
+        "aliases": [
+            "dtl",
+            "drawntolife",
+            "wapo"
         ],
         "setOnly": []
     },
