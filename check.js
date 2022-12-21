@@ -28,7 +28,7 @@ if (duplicates.length > 0) {
             msg += '\n - Built-in reserved keyword';
         }
     }
-    console.log(msg);
+    console.error(msg);
     process.exit(-1);
 } else {
     console.log('Success!');
