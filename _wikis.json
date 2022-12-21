@@ -106,11 +106,12 @@
     {
         "key": "eo",
         "name": "Etrian Odyssey Wiki",
-        "url": "https://etrianodysseywiki.org/w",
-        "articleUrl": "https://etrianodysseywiki.org/wiki",
+        "url": "https://etrianodyssey.wiki/w",
+        "articleUrl": "https://etrianodyssey.wiki/wiki",
         "aliases": [
             "etrian",
-            "etr"
+            "etr",
+            "eo"
         ],
         "setOnly": []
     },
