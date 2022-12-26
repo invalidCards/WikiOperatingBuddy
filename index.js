@@ -221,22 +221,25 @@ bot.on('message', async msg => {
                 let messageContent = '**Wiki links detected:**';
                 for (let linkData of links) {
                     if (linkData.query.includes(':')) {
-                        let [altWiki, ...actualQuery] = linkData.query.split(':');
+                        let [inputAltWiki, ...actualQuery] = linkData.query.split(':');
                         if (!actualQuery[0]) {
                             actualQuery = ['Main Page'];
                         }
-                        altWiki = altWiki.toLowerCase();
-                        if (realWikiName(altWiki)) {
+                        realAltWiki = realWikiName(inputAltWiki.toLowerCase());
+                        if (realAltWiki) {
+                            if (wiki === realAltWiki) {
+                                actualQuery = [`${inputAltWiki}:${actualQuery.join(':')}`];
+                            }
                             let wikiLink = '';
                             switch (linkData.type) {
                                 case TYPE_NORMAL:
-                                    wikiLink = await fetchLink(altWiki, actualQuery.join(':'));
+                                    wikiLink = await fetchLink(realAltWiki, actualQuery.join(':'));
                                     break;
                                 case TYPE_TEMPLATE:
-                                    wikiLink = await fetchLink(altWiki, `Template:${actualQuery.join(':')}`);
+                                    wikiLink = await fetchLink(realAltWiki, `Template:${actualQuery.join(':')}`);
                                     break;
                                 case TYPE_RAW:
-                                    wikiLink = fetchRawLink(altWiki, actualQuery.join(':'));
+                                    wikiLink = fetchRawLink(realAltWiki, actualQuery.join(':'));
                                     break;
                             }
                             if (wikiLink) {
@@ -318,13 +321,15 @@ const getWikiArticleUrl = (wikiName) => {
 
 const fetchLink = async (wikiName, article) => {
     article = article.replace(/ /g, '_');
-    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${eURIC(article)}&redirects=resolve&format=json`);
+    let url = `${getWikiBaseUrl(wikiName)}/api.php?action=opensearch&search=${eURIC(article)}&redirects=resolve&format=json`;
+    let response = await needle('get', url);
     if (!response.body[1].length) return await fetchLinkBackup(wikiName, article);
     return response.body[3][0];
 };
 
 const fetchLinkBackup = async (wikiName, article) => {
-    let response = await needle('get', `${getWikiBaseUrl(wikiName)}/api.php?action=query&list=search&srsearch=${eURIC(article)}&srnamespace=*&format=json`);
+    let url = `${getWikiBaseUrl(wikiName)}/api.php?action=query&list=search&srsearch=${eURIC(article)}&srnamespace=*&format=json`;
+    let response = await needle('get', url);
     if (response.body.query.searchinfo.totalhits === 0) return false;
     return `${getWikiArticleUrl(wikiName)}/${encodeURI(response.body.query.search[0].title.replace(/ /g, '_'))}`;
 };
