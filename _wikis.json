@@ -441,8 +441,8 @@
     {
         "key": "se",
         "name": "Square Enix Wiki",
-        "url": "https://seiwanetwork.org/wiki",
-        "articleUrl": "https://seiwanetwork.org/wiki/index.php?title=",
+        "url": "https://wiki.seiwanetwork.org/wiki",
+        "articleUrl": "https://wiki.seiwanetwork.org/wiki",
         "aliases": [
             "sew",
             "seiwa"
