@@ -292,6 +292,24 @@
         "setOnly": []
     },
     {
+        "key": "mdfw",
+        "name": "Mystery Dungeon Franchise Wiki",
+        "url": "https://mysterydungeonwiki.com/",
+        "articleUrl": "https://www.mysterydungeonwiki.com/wiki",
+        "aliases": [
+            "mdwiki",
+            "mysterydungeon",
+            "mysterydungeonwiki",
+            "fnd",
+            "fndw",
+            "fushiginodanjon",
+            "fushiginodanjonwiki",
+            "fushiginodungeon",
+            "fushiginodungeonwiki"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "me",
         "name": "MediEvil Wiki",
         "url": "https://medievil.wiki/",
