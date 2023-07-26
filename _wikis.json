@@ -148,12 +148,36 @@
         "setOnly": []
     },
     {
+        "key": "fo",
+        "name": "Independent Fallout Wiki",
+        "url": "https://fallouot.wiki/",
+        "articleUrl": "https://fallout.wiki/wiki",
+        "aliases": [
+            "fallout"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "fz",
         "name": "F-Zero Wiki",
         "url": "https://mutecity.org/w",
         "articleUrl": "https://mutecity.org/wiki",
         "aliases": [
             "f0"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "gp",
+        "name": "Gallowpedia",
+        "url": "https://medievil.wiki/",
+        "articleUrl": "https://medievil.wiki/w",
+        "aliases": [
+            "fortesque",
+            "gallowpedia",
+            "med",
+            "medievil",
+            "mew"
         ],
         "setOnly": []
     },
@@ -249,6 +273,17 @@
         "setOnly": []
     },
     {
+        "key": "kd",
+        "name": "Kingdom Hearts Database",
+        "url": "https://www.khdatabase.com",
+        "articleUrl": "https://www.khdatabase.com",
+        "aliases": [
+            "khd",
+            "khdatabase"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "kh",
         "name": "Kingdom Hearts Wiki",
         "url": "https://www.khwiki.com",
@@ -306,19 +341,6 @@
             "fushiginodanjonwiki",
             "fushiginodungeon",
             "fushiginodungeonwiki"
-        ],
-        "setOnly": []
-    },
-    {
-        "key": "me",
-        "name": "MediEvil Wiki",
-        "url": "https://medievil.wiki/",
-        "articleUrl": "https://medievil.wiki/w",
-        "aliases": [
-            "fortesque",
-            "med",
-            "medievil",
-            "mew"
         ],
         "setOnly": []
     },
@@ -437,6 +459,17 @@
         "setOnly": []
     },
     {
+        "key": "rm",
+        "name": "RayWiki",
+        "url": "https://raymanpc.com/wiki/",
+        "articleUrl": "https://raymanpc.com/wiki/en",
+        "aliases": [
+            "raywiki",
+            "raymanpc"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "rw",
         "name": "Rare Wiki",
         "url": "https://rarewiki.com/w",
@@ -529,6 +562,17 @@
             "mkit",
             "mpit",
             "mariit"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "so",
+        "name": "Star Trek Online Wiki",
+        "url": "https://stowiki.net/w",
+        "articleUrl": "https://stowiki.net/wiki",
+        "aliases": [
+            "sto",
+            "stowiki"
         ],
         "setOnly": []
     },
