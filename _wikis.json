@@ -168,20 +168,6 @@
         "setOnly": []
     },
     {
-        "key": "gp",
-        "name": "Gallowpedia",
-        "url": "https://medievil.wiki/",
-        "articleUrl": "https://medievil.wiki/w",
-        "aliases": [
-            "fortesque",
-            "gallowpedia",
-            "med",
-            "medievil",
-            "mew"
-        ],
-        "setOnly": []
-    },
-    {
         "key": "gs",
         "name": "Golden Sun Universe",
         "url": "https://goldensunwiki.net/w",
@@ -341,6 +327,21 @@
             "fushiginodanjonwiki",
             "fushiginodungeon",
             "fushiginodungeonwiki"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "me",
+        "name": "Gallowpedia",
+        "url": "https://medievil.wiki/",
+        "articleUrl": "https://medievil.wiki/w",
+        "aliases": [
+            "fortesque",
+            "gallowpedia",
+            "med",
+            "medievil",
+            "mew",
+            "gp"
         ],
         "setOnly": []
     },
