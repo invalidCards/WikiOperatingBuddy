@@ -439,6 +439,21 @@
         "setOnly": []
     },
     {
+        "key": "pkp",
+        "name": "Poképedia (FR)",
+        "url": "https://www.pokepedia.fr/",
+        "articleUrl": "https://www.pokepedia.fr/",
+        "aliases": [
+            "poke-fr",
+            "pkm-fr",
+            "pkmn-fr",
+            "pok-fr",
+            "pika-fr",
+            "pokemon-fr"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "pm",
         "name": "Power Master Wiki",
         "url": "https://powermasterwiki.com/w",
