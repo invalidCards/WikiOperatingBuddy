@@ -2,6 +2,9 @@ var wikis = require('./_wikis.json');
 
 let keys = [];
 for (let obj of wikis) {
+    if (obj.url.endsWith('/') || obj.articleUrl.endsWith('/')) {
+        console.error(`Wiki with key ${obj.key} has a URL ending with a slash. This is bad!`);
+    }
     keys.push(obj.key.toLowerCase());
     keys.push(...obj.aliases.map(a => a.toLowerCase()));
 }

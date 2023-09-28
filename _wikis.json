@@ -150,7 +150,7 @@
     {
         "key": "fo",
         "name": "Independent Fallout Wiki",
-        "url": "https://fallout.wiki/",
+        "url": "https://fallout.wiki",
         "articleUrl": "https://fallout.wiki/wiki",
         "aliases": [
             "fallout"
@@ -222,7 +222,7 @@
         "key": "ip-es",
         "name": "Inkipedia ES",
         "url": "https://es.splatoonwiki.org/w",
-        "articleUrl": "https://es.splatoonwiki.org/wiki/",
+        "articleUrl": "https://es.splatoonwiki.org/wiki",
         "aliases": [
             "ink-es",
             "inkp-es",
@@ -236,7 +236,7 @@
         "key": "ip-fr",
         "name": "Inkipedia FR",
         "url": "https://fr.splatoonwiki.org/w",
-        "articleUrl": "https://fr.splatoonwiki.org/wiki/",
+        "articleUrl": "https://fr.splatoonwiki.org/wiki",
         "aliases": [
             "ink-fr",
             "inkp-fr",
@@ -315,7 +315,7 @@
     {
         "key": "mdfw",
         "name": "Mystery Dungeon Franchise Wiki",
-        "url": "https://mysterydungeonwiki.com/",
+        "url": "https://mysterydungeonwiki.com",
         "articleUrl": "https://www.mysterydungeonwiki.com/wiki",
         "aliases": [
             "mdwiki",
@@ -333,7 +333,7 @@
     {
         "key": "me",
         "name": "Gallowpedia",
-        "url": "https://medievil.wiki/",
+        "url": "https://medievil.wiki",
         "articleUrl": "https://medievil.wiki/w",
         "aliases": [
             "fortesque",
@@ -416,8 +416,8 @@
     {
         "key": "pc",
         "name": "Pokémon Central Wiki",
-        "url": "https://wiki.pokemoncentral.it/",
-        "articleUrl": "https://wiki.pokemoncentral.it/",
+        "url": "https://wiki.pokemoncentral.it",
+        "articleUrl": "https://wiki.pokemoncentral.it",
         "aliases": [
             "poke-it",
             "pkm-it",
@@ -462,7 +462,7 @@
     {
         "key": "rm",
         "name": "RayWiki",
-        "url": "https://raymanpc.com/wiki/",
+        "url": "https://raymanpc.com/wiki",
         "articleUrl": "https://raymanpc.com/wiki/en",
         "aliases": [
             "raywiki",
@@ -530,7 +530,7 @@
         "key": "sm-de",
         "name": "MarioWiki",
         "url": "https://mariowiki.net/w",
-        "articleUrl": "https://mariowiki.net/wiki/",
+        "articleUrl": "https://mariowiki.net/wiki",
         "aliases": [
             "smw-de",
             "mario-de",
@@ -548,8 +548,8 @@
     {
         "key": "sm-it",
         "name": "Super Mario Wiki (Mario's Castle)",
-        "url": "https://www.mariowiki.it/",
-        "articleUrl": "https://www.mariowiki.it/",
+        "url": "https://www.mariowiki.it",
+        "articleUrl": "https://www.mariowiki.it",
         "aliases": [
             "marioscastle",
             "smw-it",
@@ -642,7 +642,7 @@
         "key": "Wapopedia",
         "name": "Wapopedia",
         "url": "https://drawntolife.wiki/w",
-        "articleUrl": "https://drawntolife.wiki/en/",
+        "articleUrl": "https://drawntolife.wiki/en",
         "aliases": [
             "dtl",
             "drawntolife",
@@ -684,7 +684,7 @@
     {
         "key": "wd",
         "name": "WikiDex",
-        "url": "https://www.wikidex.net/",
+        "url": "https://www.wikidex.net",
         "articleUrl": "https://www.wikidex.net/wiki",
         "aliases": [
             "poke-es",
@@ -734,8 +734,8 @@
     {
         "key": "xp",
         "name": "Xenopedia",
-        "url": "https://www.xenopedia.it/",
-        "articleUrl": "https://www.xenopedia.it/",
+        "url": "https://www.xenopedia.it",
+        "articleUrl": "https://www.xenopedia.it",
         "aliases": [
             "xeno-it",
             "xc-it"
