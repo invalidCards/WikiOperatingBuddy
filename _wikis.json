@@ -21,6 +21,14 @@
         "setOnly": []
     },
     {
+        "key": "aces",
+        "name": "Animal Crossing Enciclopedia (ES)",
+        "url": "https://animalcrossing.wikidex.net",
+        "articleUrl": "https://animalcrossing.wikidex.net/wiki",
+        "aliases": [],
+        "setOnly": []
+    },
+    {
         "key": "bp",
         "name": "Bulbapedia",
         "url": "https://bulbapedia.bulbagarden.net/w",
@@ -470,6 +478,19 @@
         "aliases": [
             "piki",
             "pik"
+        ],
+        "setOnly": []
+    },
+    {
+        "key": "rh",
+        "name": "Rhythm Heaven Wiki",
+        "url": "https://rhwiki.net/w",
+        "articleUrl": "https://rhwiki.net/wiki",
+        "aliases": [
+            "rp",
+            "rhythm",
+            "rhw",
+            "rpw"
         ],
         "setOnly": []
     },
