@@ -25,7 +25,9 @@
         "name": "Animal Crossing Enciclopedia (ES)",
         "url": "https://animalcrossing.wikidex.net",
         "articleUrl": "https://animalcrossing.wikidex.net/wiki",
-        "aliases": [],
+        "aliases": [
+            "ac-es"
+        ],
         "setOnly": []
     },
     {
@@ -448,8 +450,8 @@
     {
         "key": "pkp",
         "name": "Poképedia (FR)",
-        "url": "https://www.pokepedia.fr/",
-        "articleUrl": "https://www.pokepedia.fr/",
+        "url": "https://www.pokepedia.fr",
+        "articleUrl": "https://www.pokepedia.fr",
         "aliases": [
             "poke-fr",
             "pkm-fr",
