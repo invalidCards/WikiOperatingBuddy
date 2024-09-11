@@ -78,14 +78,12 @@
         "setOnly": []
     },
     {
-        "key": "dw",
-        "name": "Diary of a Wimpy Kid Wiki",
-        "url": "https://wimpykidwiki.com/w",
-        "articleUrl": "https://wimpykidwiki.com/wiki",
+        "key": "dd",
+        "name": "Deadlock Wiki",
+        "url": "https://deadlockwiki.org/mw",
+        "articleUrl": "https://deadlockwiki.org/w",
         "aliases": [
-            "doawk",
-            "dwk",
-            "wimpykid"
+            "deadlock"
         ],
         "setOnly": []
     },
@@ -113,6 +111,18 @@
         "setOnly": []
     },
     {
+        "key": "dw",
+        "name": "Diary of a Wimpy Kid Wiki",
+        "url": "https://wimpykidwiki.com/w",
+        "articleUrl": "https://wimpykidwiki.com/wiki",
+        "aliases": [
+            "doawk",
+            "dwk",
+            "wimpykid"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "eo",
         "name": "Etrian Odyssey Wiki",
         "url": "https://etrianodyssey.wiki/w",
@@ -123,7 +133,7 @@
         ],
         "setOnly": []
     },
-        {
+    {
         "key": "fan",
         "name": "Fanon Wiki",
         "url": "https://fanonwiki.org/w",
