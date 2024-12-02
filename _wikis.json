@@ -672,6 +672,16 @@
         "setOnly": []
     },
     {
+        "key": "twewy",
+        "name": "The Wiki Ends With You",
+        "url": "https://twewy.wiki/w",
+        "articleUrl": "https://twewy.wiki/wiki",
+        "aliases": [
+            "twewywiki"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "uk",
         "name": "Ukikipedia",
         "url": "https://ukikipedia.net/mediawiki",
