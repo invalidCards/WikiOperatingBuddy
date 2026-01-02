@@ -31,6 +31,21 @@
         "setOnly": []
     },
     {
+        "key": "bcp",
+        "name": "Blooncyclopedia",
+        "url": "https://www.bloonswiki.com/",
+        "articleUrl": "https://www.bloonswiki.com",
+        "aliases": [
+            "bcp",
+            "bloon",
+            "bloons",
+            "btd",
+            "bpedia",
+            "bcpedia"
+        ],
+        "setOnly": []
+    },
+    {
         "key": "bp",
         "name": "Bulbapedia",
         "url": "https://bulbapedia.bulbagarden.net/w",
