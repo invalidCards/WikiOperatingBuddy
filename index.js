@@ -46,7 +46,7 @@ bot.on('message', async msg => {
                             db.prepare('INSERT INTO guilds (GuildID, WikiKey) VALUES(?, ?) ON CONFLICT(GuildID) DO UPDATE SET WikiKey=excluded.WikiKey').run(msg.guild.id, wikiKey);
                             await msg.channel.send(`The wiki for this server has been successfully set to **${getWikiObj(wikiKey).name}**!`);
                         } catch(e) {
-                            await msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                            await msg.channel.send(`Sorry, something went wrong. Please try again. If the issue persists, please contact ${config.adminTag ?? 'the owner of this bot'} with a description of your issue.`);
                             console.error(e);
                         }
                     } else {
@@ -75,7 +75,7 @@ bot.on('message', async msg => {
                             db.prepare('DELETE FROM channels WHERE ChannelID=?').run(msg.channel.id);
                             await msg.channel.send('The wiki for this channel has been reset to the default for the server.');
                         } catch(e) {
-                            await msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                            await msg.channel.send(`Sorry, something went wrong. Please try again. If the issue persists, please contact ${config.adminTag ?? 'the owner of this bot'} with a description of your issue.`);
                             console.error(e);
                         }
                     } else {
@@ -85,7 +85,7 @@ bot.on('message', async msg => {
                                 db.prepare('INSERT INTO channels (ChannelID, WikiKey) VALUES (?, ?) ON CONFLICT(ChannelID) DO UPDATE SET WikiKey=excluded.WikiKey').run(msg.channel.id, wikiKey);
                                 await msg.channel.send(`The wiki for this channel has been successfully set to **${getWikiObj(wikiKey).name}**!`);
                             } catch(e) {
-                                await msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                                await msg.channel.send(`Sorry, something went wrong. Please try again. If the issue persists, please contact ${config.adminTag ?? 'the owner of this bot'} with a description of your issue.`);
                                 console.error(e);
                             }
                         } else {
@@ -140,8 +140,8 @@ bot.on('message', async msg => {
 • \`{{search term}}\` - uses the API (same as above) to find an existing template with the same name
 • \`--search term--\` - creates a direct link to the search term, regardless of whether or not the page exists`);
     
-                    embed.addField('Feedback and suggestions', 'If you have any ideas, or features you are missing, please contact `invalidCards#0380` with your suggestion, and I will try to add it to the bot!');
-                    embed.addField('Code', 'The bot is fully open-source - you can look at [its GitHub repo](https://github.com/invalidCards/WikiOperatingBuddy) to see the complete inner workings!');
+                    embed.addField('Feedback and suggestions', `If you have any ideas, or features you are missing, please contact ${config.adminTag ?? 'the owner of this bot'} with your suggestion, and I will try to add it to the bot!`);
+                    if (config.repo) embed.addField('Code', `The bot is fully open-source - you can look at [its GitHub repo](${config.repo}) to see the complete inner workings!`);
                     await msg.channel.send(embed);
                     break;
                 }
@@ -158,7 +158,7 @@ bot.on('message', async msg => {
                         else if (args[0] === 'all') returnMessage = 'none of your further messages will be parsed for wiki links.';
                         msg.reply(returnMessage);
                     } catch(e) {
-                        await msg.channel.send('Sorry, something went wrong. Please try again. If the issue persists, please contact invalidCards#0380 with a description of your issue.');
+                        await msg.channel.send(`Sorry, something went wrong. Please try again. If the issue persists, please contact ${config.adminTag ?? 'the owner of this bot'} with a description of your issue.`);
                         console.error(e);
                     }
                     break;

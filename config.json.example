@@ -1,0 +1,7 @@
+{
+    "token": "",                //The Discord token of the bot
+    "prefix": "n!",             //The command prefix the bot listens to
+    "adminId": "",              //Your Discord user ID (snowflake)
+    "adminTag": "invalidcards", //Your Discord username,
+    "repo": ""                  //The GitHub repository where this code lives - leave blank to omit from the help message
+}
