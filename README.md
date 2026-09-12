@@ -7,4 +7,4 @@ A Discord bot for linking to wikis in the [NIWA Network](http://www.niwanetwork.
 All usage help can be found by using the `n!help` command in any server the bot is in, or in a Direct Message with the bot.
 
 ## Invite
-https://nvld.krd/wob
+Unfortunately this bot is no longer operational after Discord denied it message reading capabilities, however the source here can still be used to self-host your own copy.
